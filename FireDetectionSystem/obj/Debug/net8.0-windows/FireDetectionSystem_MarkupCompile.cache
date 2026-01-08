@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 D:\test\FireDetectionSystem\FireDetectionSystem\App.xaml
-21577743027
+7-616290485
 
-7-1109966873
+17-1961986107
 21720037327
-Views\LoginView.xaml;Views\MainView.xaml;
+Views\CameraDetectionView.xaml;Views\ImageDetectionView.xaml;Views\LoginView.xaml;Views\MainView.xaml;Views\SettingsView.xaml;Views\UserManagementView.xaml;Views\VideoDetectionView.xaml;
 
 False
 

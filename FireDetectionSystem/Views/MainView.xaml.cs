@@ -13,6 +13,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -23,15 +24,23 @@ namespace FireDetectionSystem.Views
     /// </summary>
     public partial class MainView : Window
     {
-        public MainView()
+
+        public readonly IRegionManager _regionManager;
+        public MainView(IRegionManager regionManager)
         {
             InitializeComponent();
+            _regionManager = regionManager;
+            this.Loaded += MainView_Loaded;
         }
 
+        private void MainView_Loaded(object sender, RoutedEventArgs e)
+        {
+            _regionManager.RequestNavigate("ContentRegion", "ImageDetection");
+        }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            using var predictor = new YoloPredictor("D:\\下载\\ultralytics-main\\runs\\detect\\train4\\weights\\best.onnx");
+            /*using var predictor = new YoloPredictor("D:\\下载\\ultralytics-main\\runs\\detect\\train4\\weights\\best.onnx");
 
             // 等待异步检测结果
             var result = await Task.Run(
@@ -52,7 +61,26 @@ namespace FireDetectionSystem.Views
             bitmap.StreamSource = ms;
             bitmap.EndInit();
             bitmap.Freeze();
-            image2.Source = bitmap;
+            image2.Source = bitmap;*/
         }
+
+        private bool _isMenuOpen = false;
+        private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
+        {
+            if (_isMenuOpen)
+            {
+                // 关闭菜单
+                Storyboard sb = FindResource("MenuClose") as Storyboard;
+                sb?.Begin();
+            }
+            else
+            {
+                // 打开菜单
+                Storyboard sb = FindResource("MenuOpen") as Storyboard;
+                sb?.Begin();
+            }
+            _isMenuOpen = !_isMenuOpen;
+        }
+
     }
 }
