@@ -36,33 +36,12 @@ namespace FireDetectionSystem.Views
         private void MainView_Loaded(object sender, RoutedEventArgs e)
         {
             _regionManager.RequestNavigate("ContentRegion", "ImageDetection");
+
+            FireDetectionModule.Initialize("D:\\下载\\ultralytics-main\\runs\\detect\\train4\\weights\\best.onnx");
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
-        {
-            /*using var predictor = new YoloPredictor("D:\\下载\\ultralytics-main\\runs\\detect\\train4\\weights\\best.onnx");
-
-            // 等待异步检测结果
-            var result = await Task.Run(
-                () => predictor.Detect("C:\\Users\\Seeney\\Desktop\\fire.jpg")
-            );
-
-            image1.Source = new BitmapImage(new System.Uri("C:\\Users\\Seeney\\Desktop\\fire.jpg"));
-
-            // 修正：使用 PlottingExtensions.PlotImage 并传入检测结果
-            using var img = SixLabors.ImageSharp.Image.Load("C:\\Users\\Seeney\\Desktop\\fire.jpg");
-            using var plotted = result.PlotImage(img);
-            using var ms = new MemoryStream();
-            plotted.Save(ms, new PngEncoder());
-            ms.Seek(0, SeekOrigin.Begin);
-            var bitmap = new BitmapImage();
-            bitmap.BeginInit();
-            bitmap.CacheOption = BitmapCacheOption.OnLoad;
-            bitmap.StreamSource = ms;
-            bitmap.EndInit();
-            bitmap.Freeze();
-            image2.Source = bitmap;*/
-        }
+       
+       
 
         private bool _isMenuOpen = false;
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)

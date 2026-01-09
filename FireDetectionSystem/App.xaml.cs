@@ -26,6 +26,7 @@ namespace FireDetectionSystem
             containerRegistry.RegisterForNavigation<Views.SettingsView, ViewModels.SettingsViewModel>("Settings");
             containerRegistry.RegisterForNavigation<Views.UserManagementView, ViewModels.UserManagementViewModel>("UserManagement");
             containerRegistry.RegisterForNavigation<Views.CameraDetectionView, ViewModels.CameraDetectionViewModel>("CameraDetection");
+           
         }
 
         protected override void OnInitialized()

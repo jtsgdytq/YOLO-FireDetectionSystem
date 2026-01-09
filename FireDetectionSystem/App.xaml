@@ -16,13 +16,13 @@
             </ResourceDictionary.MergedDictionaries>
 
 
-            <Style  x:Key="LoginStyle" TargetType="Window" >
-                <Setter Property="WindowStyle" Value="None"/>
-                <Setter Property="AllowsTransparency" Value="True"/>
-                <Setter Property="Background" Value="Transparent"/>
-                <Setter Property="ResizeMode" Value="NoResize"/>
+            <Style x:Key="LoginStyle" TargetType="Window">
+                <Setter Property="WindowStyle" Value="None" />
+                <Setter Property="AllowsTransparency" Value="True" />
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="ResizeMode" Value="NoResize" />
             </Style>
         </ResourceDictionary>
-       
+
     </Application.Resources>
 </prism:PrismApplication>

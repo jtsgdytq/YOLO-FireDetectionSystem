@@ -30,7 +30,7 @@
         <!--  Left Section  -->
         <Grid>
             <Border
-                Background="#07bf96"
+                Background="#FF6B35"
                 ClipToBounds="True"
                 CornerRadius="10 0 0 10">
                 <Border.Clip>
@@ -70,42 +70,42 @@
                         Height="500"
                         Margin="50,0,0,-200"
                         VerticalAlignment="Bottom"
-                        Fill="#5eccb4"
+                        Fill="#F7931E"
                         Opacity="0.6" />
                     <Ellipse
                         Width="300"
                         Height="300"
                         Margin="-450,0,0,30"
                         VerticalAlignment="Bottom"
-                        Fill="#5bcbb3"
+                        Fill="#F7931E"
                         Opacity="0.3" />
                     <Ellipse
                         Width="400"
                         Height="400"
                         Margin="-320,0,0,-120"
                         VerticalAlignment="Bottom"
-                        Fill="#5eccb4"
+                        Fill="#F7931E"
                         Opacity="0.3" />
                     <Ellipse
                         Width="500"
                         Height="500"
                         Margin="50,0,0,-200"
                         VerticalAlignment="Bottom"
-                        Fill="#5eccb4"
+                        Fill="#F7931E"
                         Opacity="0.6" />
                     <Ellipse
                         Width="250"
                         Height="250"
                         Margin="-380,0,0,-120"
                         VerticalAlignment="Bottom"
-                        Fill="#5bc9b2"
+                        Fill="#F7931E"
                         Opacity="0.6" />
                     <Ellipse
                         Width="400"
                         Height="400"
                         Margin="280,0,0,-70"
                         VerticalAlignment="Bottom"
-                        Fill="#5eccb4"
+                        Fill="#F7931E"
                         Opacity="0.8" />
 
                     <!--  Icon  -->
@@ -167,9 +167,10 @@
                 <!--  Close Icon  -->
 
                 <Button
-                    Margin="0,5,5,0" Command="{Binding CloseCommand}"
+                    Margin="0,5,5,0"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top"
+                    Command="{Binding CloseCommand}"
                     Style="{StaticResource MaterialDesignFlatButton}">
                     <material:PackIcon
                         Width="30"
@@ -227,7 +228,7 @@
                             Width="120"
                             Height="45"
                             material:ButtonAssist.CornerRadius="22"
-                            Background="#05b790"
+                            Background="#dca503"
                             Command="{Binding LoginCommand}"
                             Content="Login"
                             FontSize="18"
@@ -235,6 +236,7 @@
                         <Button
                             Width="140"
                             Height="45"
+                            Foreground="#F7931E"
                             Margin="5,0,0,0"
                             material:ButtonAssist.CornerRadius="22"
                             Content="or Sign Up"

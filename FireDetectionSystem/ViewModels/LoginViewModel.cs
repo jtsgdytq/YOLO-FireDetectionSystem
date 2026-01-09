@@ -10,7 +10,7 @@ namespace FireDetectionSystem.ViewModels
 {
     public class LoginViewModel : BindableBase,IDialogAware
     {
-        public string Title => "Login";
+        public string Title => "火灾检测";
 
         public DialogCloseListener RequestClose { get; set; }
 
