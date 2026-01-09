@@ -23,9 +23,14 @@
             <Slider
                 Width="200"
                 Margin="10,10,3,3"
-                Maximum="50"
+                IsSnapToTickEnabled="True"
+                Maximum="1"
                 Minimum="0"
-                Value="65" />
+                TickFrequency="0.1"
+                Value="{Binding Confidence,Mode=TwoWay}" />
+
+            <Label Content="{Binding Confidence}" />
+
 
             <Button
                 HorizontalAlignment="Right"
@@ -42,7 +47,10 @@
                 Padding="10"
                 BorderBrush="Black"
                 BorderThickness="2">
-                <Image x:Name="image1" Source="{Binding ImagePath}" Stretch="Fill" />
+                <Image
+                    x:Name="image1"
+                    Source="{Binding ImagePath}"
+                    Stretch="Fill" />
             </Border>
             <Border
                 Grid.Column="1"
@@ -50,7 +58,10 @@
                 Padding="10"
                 BorderBrush="Black"
                 BorderThickness="2">
-                <Image x:Name="image2" Source="{Binding DetectImage}" Stretch="Fill"/>
+                <Image
+                    x:Name="image2"
+                    Source="{Binding DetectImage}"
+                    Stretch="Fill" />
             </Border>
         </Grid>
         <Grid Grid.Row="2">
@@ -80,7 +91,7 @@
                     Margin="0,5,5,5"
                     HorizontalAlignment="Right"
                     Command="{Binding DetectionImageCommand}"
-                    Content="开始检测"  />
+                    Content="开始检测" />
             </StackPanel>
         </Grid>
     </Grid>

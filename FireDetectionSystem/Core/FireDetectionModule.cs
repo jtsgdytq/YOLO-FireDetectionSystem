@@ -35,11 +35,11 @@ public static class FireDetectionModule
     /// <summary>
     /// 核心检测方法 - 支持图片文件路径
     /// </summary>
-    public static async Task<Compunet.YoloSharp.Data.YoloResult<Compunet.YoloSharp.Data.Detection>> DetectAsync(string imagePath)
+    public static async Task<Compunet.YoloSharp.Data.YoloResult<Compunet.YoloSharp.Data.Detection>> DetectAsync(string imagePath, YoloConfiguration? configuration = null)
     {
         EnsureLoaded();
         using var image = Image.Load<Rgba32>(imagePath);
-        return await Task.Run(() => _predictor.Detect(imagePath));
+        return await Task.Run(() => _predictor.Detect(imagePath, configuration));
     }
 
     /// <summary>

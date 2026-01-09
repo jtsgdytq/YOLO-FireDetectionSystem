@@ -34,6 +34,15 @@ namespace FireDetectionSystem.ViewModels
             set { detectImage = value; RaisePropertyChanged(); }
         }
 
+        private float confidence =0.5f;
+
+        public float Confidence
+        {
+            get { return confidence; }
+            set { confidence = value;RaisePropertyChanged(nameof(Confidence)); }
+        }
+
+
         public DelegateCommand DetectionImageCommand { get; set; }
 
         public DelegateCommand SelectImagePathCommnad { get; set; }
@@ -63,7 +72,7 @@ namespace FireDetectionSystem.ViewModels
 
         private async void DetectionImage()
         {
-            var result = await FireDetectionModule.DetectAsync(ImagePath);
+            var result = await FireDetectionModule.DetectAsync(ImagePath, new YoloConfiguration { Confidence=confidence });
 
             using var img = SixLabors.ImageSharp.Image.Load<Rgba32>(ImagePath);
 
