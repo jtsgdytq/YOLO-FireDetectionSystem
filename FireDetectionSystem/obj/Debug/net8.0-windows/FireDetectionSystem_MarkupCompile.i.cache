@@ -16,5 +16,5 @@ D:\test\FireDetectionSystem\FireDetectionSystem\App.xaml
 220-1174023329
 Views\CameraDetectionView.xaml;Views\ImageDetectionView.xaml;Views\LoginView.xaml;Views\MainView.xaml;Views\SettingsView.xaml;Views\UserManagementView.xaml;Views\VideoDetectionView.xaml;
 
-False
+True
 

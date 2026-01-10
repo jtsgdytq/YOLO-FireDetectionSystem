@@ -23,6 +23,15 @@ namespace FireDetectionSystem.Views
         public VideoDetectionView()
         {
             InitializeComponent();
+            this.Loaded += VideoDetectionView_Loaded;
+        }
+
+        private void VideoDetectionView_Loaded(object sender, RoutedEventArgs e)
+        {
+            if(DataContext is ViewModels.VideoDetectionViewModel vm)
+            {
+                /*vm.MediaElement = this.mediaelement;*/
+            }
         }
     }
 }

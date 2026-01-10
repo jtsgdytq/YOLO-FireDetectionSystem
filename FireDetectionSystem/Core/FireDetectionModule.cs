@@ -55,7 +55,7 @@ public static class FireDetectionModule
     /// <summary>
     /// 核心检测方法 - 专门针对 OpenCvSharp (摄像头/视频)
     /// </summary>
-    public static object DetectFrame(Mat cvFrame)
+    public static Compunet.YoloSharp.Data.YoloResult<Compunet.YoloSharp.Data.Detection> DetectFrame(Mat cvFrame)
     {
         EnsureLoaded();
 

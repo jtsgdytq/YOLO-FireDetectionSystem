@@ -9,10 +9,90 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
     <Grid>
-        <TextBlock
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            FontSize="100"
-            Text="VideoDetection" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock
+                Margin="10,3,0,3"
+                FontSize="20"
+                Foreground="White"
+                Text="置信度:" />
+            <Slider
+                Width="200"
+                Margin="10,10,3,3"
+                IsSnapToTickEnabled="True"
+                Maximum="1"
+                Minimum="0"
+                TickFrequency="0.1"
+                Value="{Binding Confidence, Mode=TwoWay}" />
+
+            <Label Content="{Binding Confidence}" />
+
+
+            <Button
+                HorizontalAlignment="Right"
+                Command="{Binding SelectVideoPathCommnad}"
+                Content="选择视频" />
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Border
+                Margin="5"
+                Padding="10"
+                BorderBrush="Black"
+                BorderThickness="2">
+                <Image Source="{Binding OrigneImage}" Stretch="Uniform" />
+                <!--<MediaElement
+                    x:Name="mediaelement"
+                    Cursor=""
+                    LoadedBehavior="Manual"
+                    Source="{Binding VideoPath}"
+                    Stretch="Uniform" />-->
+            </Border>
+            <Border
+                Grid.Column="1"
+                Margin="5"
+                Padding="10"
+                BorderBrush="Black"
+                BorderThickness="2">
+                <Image Source="{Binding DetetionSoure}" Stretch="Uniform" />
+            </Border>
+        </Grid>
+        <Grid Grid.Row="2">
+            <StackPanel Orientation="Horizontal">
+                <ListView ItemsSource="{Binding Items1}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Code}" Header="Code" />
+                            <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" />
+                            <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Description" />
+                            <GridViewColumn Header="Options">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ComboBox Width="100">
+                                            <ComboBoxItem Content="Test" />
+                                            <ComboBoxItem Content="Test2" />
+                                            <ComboBoxItem Content="Test3" />
+                                        </ComboBox>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button
+                    Width="100"
+                    Margin="0,5,5,5"
+                    HorizontalAlignment="Right"
+                    Command="{Binding DetectionVideoCommand}"
+                    Content="开始检测" />
+            </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>
