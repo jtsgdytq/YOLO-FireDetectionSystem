@@ -23,6 +23,8 @@ public static class FireDetectionModule
         {
             // 初始化你的预测器 (根据你使用的库，可能构造函数略有不同)
             _predictor = new YoloPredictor(modelPath);
+
+            
             _isLoaded = true;
             
         }
